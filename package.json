@@ -1,0 +1,22 @@
+{
+  "name": "demodani",
+  "version": "1.0.0",
+  "description": "Proyecto DEMO para Dani Brandan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/pazalejandro/demodani.git"
+  },
+  "author": "Ing. Alejandro Paz",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://gitlab.com/pazalejandro/demodani/issues"
+  },
+  "homepage": "https://gitlab.com/pazalejandro/demodani#readme",
+  "devDependencies": {
+    "@qooxdoo/framework": "^7.1.0"
+  }
+}

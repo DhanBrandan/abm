@@ -1,0 +1,39 @@
+{
+ "$schema": "https://qooxdoo.org/schema/Manifest-2-0-0.json",
+  "info" :
+  {
+    "name" : "demodani",
+    "summary" : "Proyecto DEMO para Dani Brandan",
+    "description" : "DEMO de aplicacion para aprender a manejar las herramientas de Desarrollo.",
+    "homepage" : "",
+    "license" : "GPLv3.0",
+    "authors" : [
+  {
+    "name": "Ing. Alejandro",
+    "email": "Paz"
+  },
+  {
+    "name": "",
+    "email": "pazalejandro"
+  },
+  {
+    "name": "",
+    "email": "pazalejandro@gmail.com"
+  }
+],
+    "version" : "1.0.0"
+  },
+
+  "provides" :
+  {
+    "namespace"   : "demodani",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation"
+  },
+
+  "requires": {
+    "@qooxdoo/framework": "^7.1.0"
+  }
+}
