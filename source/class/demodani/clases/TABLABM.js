@@ -52,14 +52,14 @@ qx.Class.define("demodani.clases.TABLABM", {
             "TiempoArgentina"
         ]);
 
-        
         var apiRest = new qx.io.rest.Resource();
 
-        apiRest.map("traerDatosABM", "GET", 'backend/GET.php?dni={DNI}');
+            apiRest.map("traerDatosABM", "GET", 'backend/GET.php?dni={DNI}');
 
-        apiRest.addListener("success", function (e) {
-        
-            modeloTabla.setDataAsMapArray(e.getData());
+            apiRest.addListener("success", function (e) {
+            
+            //console.log(e.getData());
+            modeloTabla.setDataAsMapArray([e.getData()]);
 
         });
 
@@ -70,21 +70,8 @@ qx.Class.define("demodani.clases.TABLABM", {
         var tabla = new qx.ui.table.Table(modeloTabla);
         
         tabla.setContextMenuFromDataCellsOnly(false)
-        /*
-        tabla.getTableColumnModel().setColumnWidth(0, 240);
-        tabla.getTableColumnModel().setColumnWidth(1, 100);
-        tabla.getTableColumnModel().setColumnWidth(2, 250);
-        tabla.getTableColumnModel().setColumnWidth(3, 250);
-        tabla.getTableColumnModel().setColumnWidth(4, 100);
-        tabla.getTableColumnModel().setColumnWidth(5, 180);
-        tabla.getTableColumnModel().setColumnWidth(6, 300);
-        */
-
-        this.add(tabla);
         
-
-        //var modeloSeleccion = tabla.getSelectionModel();
-
+        this.add(tabla);
 
         tabla.setHeight(200);
         
@@ -109,20 +96,23 @@ qx.Class.define("demodani.clases.TABLABM", {
         var modeloSeleccion = tabla.getSelectionModel();
 
         //----------------------------------------------------------------------------------------
-        mbtAgregar.addListener("execute", function () {
         
+
+        mbtAgregar.addListener("execute", function () {
             var ABMFORM = new demodani.clases.ABM("ABM: PROBANDO");
             window.add(ABMFORM);
             window.open();
             
-
+            
             ABMFORM.addListener("sePresionoGuardar", function () {
               
                 var valoresFormulario = ABMFORM.getDPersonales();
-                
+
+                console.log("estos datos estan en valores del formulario" + valoresFormulario);
+
                 modeloTabla.addRowsAsMapArray([valoresFormulario]);
 
-                ABMFORM.close();
+                window.close();
     
             }, this);
         }, this);
@@ -134,6 +124,5 @@ members: {
         this.modeloTabla.addRowsAsMapArray([jSonData]);
     },
 }
-
 
 });

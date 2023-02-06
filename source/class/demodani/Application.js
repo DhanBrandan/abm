@@ -66,37 +66,14 @@ qx.Class.define("demodani.Application",
    
       app.add(btnABM, {left:0, top:0});
 
-
       app.add(btnTABLA,{left: 320, top: 0});
 
 
-
       
-      var modeloTabla = new qx.ui.table.model.Simple();
-     /*
-      btnFORM.addListener("execute", function () {
-        
-        var winSub = new demodani.clases.SubsanacionForm("SUB-SANACION: PROBANDO");
-        winSub.open();
-
-        winSub.addListener("sePresionoGuardar", function () {
-          
-          var valForm = winSub.getDatos();
-          
-          Tabla.AddValoresTable(valForm);
-
-          winSub.close();
-
-        }, this);
-      }, this);
-      */
-
-      //
-      //
-      var TablABM = new demodani.clases.TABLABM("TABLA PRUEBA");
 
       btnTABLA.addListener("execute", function () {
         
+        var TablABM = new demodani.clases.TABLABM("TABLA PRUEBA");
         TablABM.open();
 
       }, this);
@@ -124,23 +101,19 @@ qx.Class.define("demodani.Application",
 
       }, this);
 
+      
       //--------------------------------------------------------------------------
       btnABM.addListener("execute", function () {
+        
 
         var btnGuardar = new qx.ui.form.Button("GUARDAR");
+        
 
         //ENVIAMOS PARAMETRO "DNI" A LA CLASE ABM
         var DNIIngresado = prompt("Ingrese el DNI a modificar sino se dara de ALTA");
 
         var tabABM = new demodani.clases.ABM(DNIIngresado);
-        /*
-        var datosPrueba = {
-          DNI:321321,
-          Apellido:"Paz",
-          Nombre:"Alejandro"
-        };
-        tabABM.setDatos(datosPrueba);*/
-
+        
         btnGuardar.addListener("execute", function (){
 
           

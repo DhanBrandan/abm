@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 //Esto despues sera en realidad una consulta a la BD trayendo datos reales
 
 $datos = new stdClass();
-    
+
     //----------------------DATOS PERSONALES------------------------------
     $datos->DNI = (int) $_GET["dni"];
     $datos->Apellido = "Brandan";

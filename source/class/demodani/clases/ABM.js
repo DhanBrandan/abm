@@ -388,7 +388,7 @@ getFormDatos : function () {
 
 
 
-        //----------------------------------------------------------------------
+        //----------------------------DATOS------------------------------------------
 
         var apiRest = new qx.io.rest.Resource();
         apiRest.configureRequest(function (req) {
@@ -401,8 +401,10 @@ getFormDatos : function () {
         apiRest.map("traerDatosABM", "GET", 'backend/GET.php?dni={DNI}');
         
         apiRest.addListener("success", function (DATOSBACKEND) {
-        
-                //alert("VOLVIO INFO BACKEND");
+
+                
+                this.fireEvent("sePresionoGuardar");
+                alert("SE ESTA PRESIONANDO GUARDAR getDPersonales")
                 console.log(DATOSBACKEND.getData());
 
         
@@ -411,7 +413,7 @@ getFormDatos : function () {
             //----------------------------------------------------------------------
 
         btnGuardar.addListener("execute", function() {
-      
+    
         
                 //se muestra por consola usando el metodo getDPersonales todos los datos del jSon
                 console.log(this.getDPersonales());
