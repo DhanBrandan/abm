@@ -21,8 +21,6 @@ qx.Class.define("demodani.Application",
 {
   extend : qx.application.Standalone,
 
-
-
   /*
   *****************************************************************************
      MEMBERS
@@ -59,12 +57,16 @@ qx.Class.define("demodani.Application",
 
       this.getRoot().set({ blockerColor: '#bfbfbf', blockerOpacity: 0.6 });
 
+      var imgBtn = "demodani/test.png"
 
+      var btnWidget  = new qx.ui.form.Button("Widgets", imgBtn);
 
-      var btnWidget  = new qx.ui.form.Button("Widgets");
-
+      var btnClaseModelo = new qx.ui.form.Button("Clase Modelo");
+      
       
       app.add(btnWidget, {left:0, top:0});
+      app.add(btnClaseModelo, {left:300, top:0});
+
 
     
 
@@ -76,6 +78,12 @@ qx.Class.define("demodani.Application",
 
         Widgets.open();
 
+      }, this);
+
+      btnClaseModelo.addListener("execute", function () {
+        var win = new demodani.clases.ClaseModelo();
+        win.open();
+        
       }, this);
    },
 }  

@@ -68,31 +68,77 @@ qx.Class.define("demodani.clases.Widgets", {
         this.add(lblWidImg);
         this.add(WidImg);
 
-
-        //- List
-      
-        var lblWidList = new qx.ui.basic.Label("Horizontal, Icons only");
-
-        lblWidList.setFont("bold");
-
-        this.add(lblWidList);
-  
-        var WidLis = new qx.ui.form.List(true);
-        var WidLis;
-  
-        l4.set({ width: 550, selectionMode: "multi", height: null });
-
-        var l4l = [
-            "Folder.png"
-        ];
-        this.add(l4l);
-        this.add(WidLis);
-
-        
-        
         /*
+        //- List
+        var lblWidList = new qx.ui.basic.Label("Horizontal, Icons only");
+        lblWidList.setFont("bold");
+        this.add(lblWidList);
+
+        //Creo la lista
+        var WidList = new qx.ui.form.List(true);
+        var WidList1;
+
+        var WidIcon = [
+            "Icono 1.png",
+            "Icono 2.png",
+            "Icono 3.png",
+            "Icono 4.png",
+            "Icono 5.png",
+            "Icono 6.png",
+            "Icono 7.png"
+        ];
+
+        var Img = "demodani/iconos/";
+
+        for (var i = 0; i < WidIcon.length; i++) {
+            //console.log(i);
+            //console.log(WidIcon[i]);
+
+            WidList1 = new qx.ui.form.ListItem("Icono "+ i, Img + WidIcon[i]);
+
+            WidList.add(WidList1); 
+
+            if (i == 12) {
+
+                WidList.setSelection([WidList1]);
+
+            } 
+        }
         
+        this.add(WidList);*/
         
+          ////////////////////////////////////////////////////////////////
+        
+        //- Toolbar
+
+        var mainContainer = new qx.ui.container.Composite(new qx.ui.layout.VBox(20));
+        mainContainer.setPadding(20);
+
+        let toolbar = new qx.ui.toolbar.ToolBar();
+        toolbar.setSpacing(5);
+        mainContainer.add(toolbar);
+
+
+        var part1 = new qx.ui.toolbar.Part();
+
+        var newButton = new qx.ui.toolbar.Button("NUEVO");
+        var copyButton = new qx.ui.toolbar.Button("COPIAR",);
+        var cutButton = new qx.ui.toolbar.Button("CORTAR",);
+        var pasteButton = new qx.ui.toolbar.Button("PEGAR");
+
+        part1.add(newButton);
+        part1.add(new qx.ui.toolbar.Separator());
+        part1.add(copyButton);
+        part1.add(new qx.ui.toolbar.Separator());
+        part1.add(cutButton);
+        part1.add(new qx.ui.toolbar.Separator());
+        part1.add(pasteButton);
+        part1.add(new qx.ui.toolbar.Separator());
+        toolbar.add(part1);
+
+        //----------------------------------------------------
+
+        /*
         - Menu
         - RadioButton
         - RadioButtonGroup
@@ -101,7 +147,7 @@ qx.Class.define("demodani.clases.Widgets", {
         - Spinner
         - TabView
         - TextField
-        - Toolbar
+        - Menu
         - Tree
         - Window
         - Table (Este para el final, aunque ya lo usamos pero veremos otras opciones)*/
